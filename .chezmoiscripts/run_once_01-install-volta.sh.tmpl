@@ -1,0 +1,7 @@
+#!{{ lookPath "zsh" }}
+
+echo "Install Volta"
+
+curl https://get.volta.sh | zsh -s -- --skip-setup
+volta install node
+volta install pnpm

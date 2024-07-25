@@ -1,0 +1,2 @@
+bradlc.vscode-tailwindcss
+eamodio.gitlens

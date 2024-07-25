@@ -1,0 +1,22 @@
+packages:
+  omz:
+    standard:
+      - git
+    custom:
+      - zsh-syntax-highlighting
+      - zsh-autosuggestions
+  brews:
+    - bitwarden-cli
+    - chezmoi
+    - git
+    - gh
+    - zsh
+  casks:
+    - bitwarden
+    - maccy
+    # - microsoft-office
+    - rectangle
+    - spotify
+    - todoist
+    - visual-studio-code
+    # - whatsapp

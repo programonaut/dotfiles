@@ -1,0 +1,6 @@
+{{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $bwServer := promptStringOnce . "bwServer" "Bitwarden Server" "bitwarden.com" -}}
+
+[scriptEnv]
+    BITWARDEN_EMAIL = {{ $email | quote }}
+    BITWARDEN_SERVER = {{ $bwServer | quote }}

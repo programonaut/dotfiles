@@ -1,0 +1,39 @@
+#!{{ lookPath "zsh" }}
+
+echo "Setup ssh"
+
+if [[ $BW_SESSION == "" ]]
+then
+    export BW_SESSION=$(bw unlock --raw)
+fi
+
+
+# ionos: 2343ae9d-71d9-4f86-b2dc-b1b70134c310
+# netcup: c97d7b93-2aa2-444a-9e97-b1b7013580ef
+
+IOLOGIN="{{(bitwarden "item" "2343ae9d-71d9-4f86-b2dc-b1b70134c310").login.username}}"
+IOURI="{{(index (bitwarden "item" "2343ae9d-71d9-4f86-b2dc-b1b70134c310").login.uris 0).uri}}"
+
+NCLOGIN="{{(bitwarden "item" "c97d7b93-2aa2-444a-9e97-b1b7013580ef").login.username}}"
+NCURI="{{(index (bitwarden "item" "c97d7b93-2aa2-444a-9e97-b1b7013580ef").login.uris 0).uri}}"
+
+echo "# connect ssh ionos
+Host ionos
+  HostName $IOURI
+  User $IOLOGIN
+  IdentityFile ~/.ssh/ionos_private
+  IdentitiesOnly yes
+
+# connect using ssh netcup
+Host netcup
+  HostName $NCURI
+  User $NCLOGIN
+  IdentityFile ~/.ssh/netcup_private
+  IdentitiesOnly yes
+" > ~/.ssh/config
+
+echo '{{ bitwardenAttachmentByRef "id_ed25519" "item" "2343ae9d-71d9-4f86-b2dc-b1b70134c310"}}' > ~/.ssh/ionos_private
+chmod 600 ~/.ssh/ionos_private
+
+echo '{{ bitwardenAttachmentByRef "id_ed25519" "item" "c97d7b93-2aa2-444a-9e97-b1b7013580ef"}}' > ~/.ssh/netcup_private
+chmod 600 ~/.ssh/netcup_private

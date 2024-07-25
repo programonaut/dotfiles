@@ -1,0 +1,8 @@
+{
+    "gitlens.heatmap.locations": [
+        "gutter",
+        "overview"
+    ],
+    "gitlens.plusFeatures.enabled": false,
+    "editor.wordWrap": "on"
+}

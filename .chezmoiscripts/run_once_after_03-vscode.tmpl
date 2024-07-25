@@ -1,0 +1,5 @@
+#!{{ lookPath "zsh" }}
+
+echo "Set up VSCode"
+cat ~/.vscode/chezmoi/extensions.txt | xargs -L 1 code --install-extension
+cp ~/.vscode/chezmoi/user.json ~/Library/Application\ Support/Code/User/settings.json 

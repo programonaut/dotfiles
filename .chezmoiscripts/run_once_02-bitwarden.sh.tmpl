@@ -1,0 +1,16 @@
+#!{{ lookPath "zsh" }}
+
+echo "Login to Bitwarden" 
+
+bw config server ${BITWARDEN_SERVER}
+if [[ $BW_SESSION == "" ]]
+then
+    BW_SESSION=$(bw login ${BITWARDEN_EMAIL} --raw)
+fi
+
+if [[ $BW_SESSION == "" ]]
+then
+    BW_SESSION=$(bw unlock --raw)
+fi
+
+bw sync
