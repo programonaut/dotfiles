@@ -14,9 +14,9 @@ packages:
   casks:
     - bitwarden
     - maccy
-    # - microsoft-office
+    - microsoft-office
     - rectangle
     - spotify
     - todoist
     - visual-studio-code
-    # - whatsapp
+    - whatsapp

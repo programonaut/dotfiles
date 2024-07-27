@@ -4,5 +4,32 @@
         "overview"
     ],
     "gitlens.plusFeatures.enabled": false,
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "debug.showVariableTypes": true,
+    "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "javascript.inlayHints.parameterTypes.enabled": true,
+    "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "javascript.inlayHints.variableTypes.enabled": true,
+    "typescript.inlayHints.enumMemberValues.enabled": true,
+    "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "typescript.inlayHints.parameterNames.enabled": "all",
+    "typescript.inlayHints.parameterTypes.enabled": true,
+    "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "typescript.inlayHints.variableTypes.enabled": true,
+    "typescript.npm": "/Users/maku/.volta/bin/pnpm",
+    "projectManager.git.baseFolders": [
+        "~/projects"
+    ],
+    "workbench.colorTheme": "Theme Mix",
+    "workbench.iconTheme": "material-icon-theme",
+    "tailwindCSS.emmetCompletions": true,
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "editor.quickSuggestions": {
+        "strings": "on"
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
