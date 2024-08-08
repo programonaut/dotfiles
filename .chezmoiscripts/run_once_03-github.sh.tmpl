@@ -9,6 +9,7 @@ then
     BW_SESSION=$(bw unlock --raw)
 fi
 
+echo "Setup SSH key"
 echo "{{ bitwardenAttachmentByRef "id_ed25519" "item" "9ed77cc0-aefa-4a09-9dac-b1b3010d4421"}}" > ~/.ssh/id_ed25519
 chmod 600 ~/.ssh/id_ed25519
 

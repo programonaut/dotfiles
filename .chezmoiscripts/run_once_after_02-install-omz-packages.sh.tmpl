@@ -1,0 +1,15 @@
+#!{{ lookPath "sh" }}
+
+echo "Install omz packages"
+{{ range .packages.omz.custom -}}
+echo "Installing {{.}}"
+folder="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/{{.}}"
+if ! git clone https://github.com/zsh-users/{{.}} "${folder}" 2>/dev/null && [ -d "${folder}" ] ; then
+    echo "Clone failed because the folder ${folder} exists"
+fi
+{{ end -}}
+
+folder="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+if ! git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${folder}" 2>/dev/null && [ -d "${folder}" ] ; then
+    echo "Clone failed because the folder ${folder} exists"
+fi
